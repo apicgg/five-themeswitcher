@@ -5,6 +5,7 @@ import AppTheme from "../Colors";
 const HeroSection = () => {
   const theme = useContext(ThemeContext)[0];
   const currentTheme = AppTheme[theme];
+  const [themeMode, setThemeMode] = useContext(ThemeContext);
 
   return (
     <div
@@ -24,6 +25,9 @@ const HeroSection = () => {
           fontSize: "20px",
           color: "#FFF",
           border: `${currentTheme.border}`,
+        }}
+        onClick={() => {
+          setThemeMode(themeMode === "light" ? "dark" : "light");
         }}
       >
         Click me
